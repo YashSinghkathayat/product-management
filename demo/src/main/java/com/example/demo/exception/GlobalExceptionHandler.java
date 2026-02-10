@@ -10,6 +10,21 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+
+    @ExceptionHandler(ArithmeticException.class)
+    public String handleArithmeticException(ArithmeticException e) {
+        return e.getMessage();
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    public String handleNullPointerException(NullPointerException e) {
+        return e.getMessage();
+    }
+
+    @ExceptionHandler(Exception.class)
+    public String handleGenericException(Exception e) {
+        return "Something went wrong";
+    }
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleProductNotFoundException(
             ProductNotFoundException ex) {
