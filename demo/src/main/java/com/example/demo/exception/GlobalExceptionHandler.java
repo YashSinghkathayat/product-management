@@ -21,10 +21,10 @@ public class GlobalExceptionHandler {
         return e.getMessage();
     }
 
-    @ExceptionHandler(Exception.class)
-    public String handleGenericException(Exception e) {
-        return "Something went wrong";
-    }
+//    @ExceptionHandler(Exception.class)
+//    public String handleGenericException(Exception e) {
+//        return "Something went wrong";
+//    }
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleProductNotFoundException(
             ProductNotFoundException ex) {
